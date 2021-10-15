@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "537267726277",
+    "project_id": "ynovprojetdjino",
+    "storage_bucket": "ynovprojetdjino.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537267726277:android:a51024921a42e2babb4dac",
+        "android_client_info": {
+          "package_name": "com.example.widgetsdivers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537267726277-ite7o91dnv0fbc7cr133gag0dh3nvf5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLI9SW1eU6BqwMKAS8OYq4uxbK3RIGBOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537267726277-ite7o91dnv0fbc7cr133gag0dh3nvf5o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
