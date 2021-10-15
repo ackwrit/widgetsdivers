@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgetsdivers/fonction/firestoreHelper.dart';
+import 'package:widgetsdivers/model/Utilisateur.dart';
 import 'package:widgetsdivers/profilPage.dart';
 
 class informationUser extends StatefulWidget{
@@ -29,18 +30,22 @@ class informationUserState extends State<informationUser>{
   bool isMan=true;
   List loisirs=[];
   String identifiant='';
+
+  late Utilisateur user;
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    identifiant=firestoreHelper().getIdentifiant();
+    identifiant = firestoreHelper().getIdentifiant();
+
   }
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Deuxième page'),
+        title: Text("Deuxième page"),
       ),
       body: bodyPage(),
     );
@@ -76,6 +81,7 @@ class informationUserState extends State<informationUser>{
           TextField(
             onChanged: (String value){
               setState(() {
+                nom = value;
 
 
               });
@@ -96,6 +102,7 @@ class informationUserState extends State<informationUser>{
           TextField(
             onChanged: (String value){
               setState(() {
+                prenom = value;
 
 
               });
@@ -116,6 +123,7 @@ class informationUserState extends State<informationUser>{
           TextField(
             onChanged: (String value){
               setState(() {
+                pseudo = value;
 
 
               });
@@ -136,6 +144,7 @@ class informationUserState extends State<informationUser>{
           TextField(
             onChanged: (String value){
               setState(() {
+                adresse = value;
 
 
               });
@@ -205,10 +214,12 @@ class informationUserState extends State<informationUser>{
 
               onPressed: (){
                 //création de la liste
-                ajouterliste(jeuxvideo,loisirs);
-                ajouterliste(sport,loisirs);
-                ajouterliste(reseauxSociaux,loisirs);
-                ajouterliste(lecture,loisirs);
+
+                ajouterliste(jeuxvideo,loisirs,"Jeux Videos");
+                ajouterliste(sport,loisirs,"Sport");
+                ajouterliste(reseauxSociaux,loisirs,"Réseaux sociaux");
+                ajouterliste(lecture,loisirs,"lecture");
+
                 //créattion de la map
                 Map<String,dynamic> map ={
                   "nom":nom,
@@ -237,9 +248,9 @@ class informationUserState extends State<informationUser>{
 
 
   }
-  List ajouterliste(bool element, List list){
+  List ajouterliste(bool element, List list, String valeur){
     if(element){
-      list.add(element);
+      list.add(valeur);
     }
 
     return  list;
